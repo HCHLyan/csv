@@ -1,8 +1,8 @@
 # 1. Construir la imagen Docker de la API de catálogo
 docker build -t datamart-catalog-api -f api_extension/Dockerfile.api api_extension/
 
-# 2. Iniciar el contenedor conectado a la misma red del Data Warehouse
-"""
+2. Iniciar el contenedor conectado a la misma red del Data Warehouse
+``bash
 docker run -d \
   --name datamart_catalog_api \
   --network datamart-etl_datamart_net \
@@ -13,4 +13,4 @@ docker run -d \
   -e DW_POSTGRES_PASSWORD=datamart_dw_pass \
   -p 8000:8000 \
   datamart-catalog-api
-  """
+``
